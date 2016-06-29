@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		id="cordova-plugin-androidpay"
+		version="0.1.0">
+	
+	<name>Android Pay</name>
+	<description>Implements Android Pay.</description>
+	<keywords>cordova,payment,android pay</keywords>
+	<repo></repo>
+	
+	<platform name="android">
+		
+		<framework src="com.google.android.gms:play-services-wallet:8.4.0"/>
+		
+		<config-file target="AndroidManifest.xml" parent="application">
+			<meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true" />
+		</config-file>
+		
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AndroidPay">
+				<param name="android-package" value="com.verypositive.cordova.AndroidPay" />
+			</feature>
+		</config-file>
+		
+		<js-module src="www/androidpay.js" name="payment">
+			<clobbers target="AndroidPay" />
+		</js-module>
+		
+		<source-file src="src/android/AndroidPay.java" target-dir="src/com/verypositive/cordova" />
+		
+	</platform>
+	
+</plugin>
