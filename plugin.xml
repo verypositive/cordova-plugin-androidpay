@@ -10,7 +10,7 @@
 	
 	<platform name="android">
 		
-		<framework src="com.google.android.gms:play-services-wallet:8.4.0"/>
+		<framework src="com.google.android.gms:play-services-wallet:+"/>
 		
 		<config-file target="AndroidManifest.xml" parent="application">
 			<meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true" />
